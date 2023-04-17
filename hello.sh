@@ -1,2 +1,2 @@
-echo hello aelkaroumi
+echo 'Hello aelkarou!'
 
