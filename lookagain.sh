@@ -1,1 +1,1 @@
-find -name "*.sh" | cut -d "." -f2
+find -name "*.sh" -printf "%f\n" | sed 's|.sh||'
