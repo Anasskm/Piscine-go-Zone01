@@ -1,1 +1,1 @@
-curl -s https://zone01normandie.org/assets/superhero/all.json | jq ' .[] | select( .id == 1 )' | jq ' .connections.relatives' | sed 's/"/ /g'
+curl -s https://zone01normandie.org/assets/superhero/all.json | jq ' .[] | select( .id == 1 )' | jq ' .connections.relatives' | sed 's/"//g'
