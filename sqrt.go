@@ -8,12 +8,11 @@ func Sqrt(nb int) int {
 	x := 0
 
 	for i := 0; i < nb; i++ {
-		for j := 0; j < nb; j++ {
-			if i*j == nb && i == j {
-				x = i
-				break
-			}
+		if i*i == nb {
+			x = i
+			break
 		}
 	}
+
 	return x
 }
