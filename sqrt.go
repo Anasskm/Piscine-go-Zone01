@@ -11,6 +11,7 @@ func Sqrt(nb int) int {
 		for j := 0; j < nb; j++ {
 			if i*j == nb && i == j {
 				x = i
+				break
 			}
 		}
 	}
