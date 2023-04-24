@@ -8,9 +8,25 @@ func FindNextPrime(nb int) int {
 		nb = nb + 1
 	}
 
-	if IsPrime(nb) {
+	if Ispe(nb) {
 		return nb
 	} else {
 		return FindNextPrime(nb + 2)
 	}
+}
+
+func Ispe(nb int) bool {
+	if nb < 2 {
+		return false
+	}
+	if nb%2 == 0 {
+		return false
+	}
+	for i := 3; i < nb/3; i = i + 2 {
+		if nb%i == 0 {
+			return false
+		}
+	}
+
+	return true
 }
