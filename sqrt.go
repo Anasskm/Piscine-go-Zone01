@@ -7,7 +7,7 @@ func Sqrt(nb int) int {
 
 	x := 0
 
-	for i := 1; i < nb; i++ {
+	for i := 1; i <= nb; i++ {
 		if i*i == nb {
 			x = i
 			break
