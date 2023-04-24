@@ -22,7 +22,7 @@ func Ispe(nb int) bool {
 	if nb%2 == 0 {
 		return false
 	}
-	for i := 3; i < nb/3; i = i + 2 {
+	for i := 3; i <= nb/3; i = i + 2 {
 		if nb%i == 0 {
 			return false
 		}
