@@ -7,18 +7,18 @@ func Capitalize(s string) string {
 	}
 	for i := 1; i < len(r); i++ {
 		if checkifupper(r[i]) {
-			if CheckIfNotLetterOrNumber(r[i-1]) {
-				continue
-			} else {
+			if CheckIfLetterOrNumber(r[i-1]) {
 				r[i] += 32
 			}
+			continue
+
 		}
 		if checkiflower(r[i]) {
-			if CheckIfNotLetterOrNumber(r[i-1]) {
-				r[i] -= 32
-			} else {
+			if CheckIfLetterOrNumber(r[i-1]) {
 				continue
 			}
+			r[i] -= 32
+
 		}
 	}
 
@@ -26,8 +26,8 @@ func Capitalize(s string) string {
 	return st
 }
 
-func CheckIfNotLetterOrNumber(r rune) bool {
-	if (r < 48 || r > 122) && (r < 48 || r > 57) && (r < 65 || r > 57) && (r < 97 || r > 90) {
+func CheckIfLetterOrNumber(r rune) bool {
+	if (r >= 48 && r <= 57) || (r >= 65 && r <= 90) || (r >= 97 && r <= 122) {
 		return true
 	}
 	return false
