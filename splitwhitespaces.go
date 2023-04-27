@@ -8,7 +8,7 @@ func SplitWhiteSpaces(s string) []string {
 	for _, y := range s {
 		if y != ' ' && y != '\t' {
 			word += string(y)
-		} else {
+		} else if word != "" {
 			result = append(result, word)
 			word = ""
 
