@@ -15,6 +15,17 @@ func main() {
 			}
 		}
 	}
+	for i := 0; i < len(a); i++ {
+		r := []rune(a[i])
+
+		if r[0] < 'A' {
+			for j := range a[i] {
+				z01.PrintRune(r[j])
+			}
+			z01.PrintRune('\n')
+		}
+
+	}
 
 	for i := 0; i < len(a); i++ {
 		r := []rune(a[i])
