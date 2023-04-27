@@ -9,6 +9,9 @@ import (
 func main() {
 	arg := os.Args[1:]
 	charCase := 0
+	if len(arg) == 0 {
+		os.Exit(0)
+	}
 	for ind := range arg {
 		if ind == 0 && arg[ind] == "--upper" {
 			charCase = -32
