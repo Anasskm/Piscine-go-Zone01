@@ -3,10 +3,9 @@ package piscine
 func TrimAtoi(s string) int {
 	x := 0
 	si := 1
-	z := 1
+
 	if Numeric(s) {
 		for _, i := range s {
-
 			if i < '0' || i > '9' {
 				continue
 			}
@@ -14,7 +13,7 @@ func TrimAtoi(s string) int {
 			for k := '1'; k <= i; k++ {
 				y++
 			}
-			x = (x*10 + y) * z
+			x = x*10 + y
 		}
 		for j := range s {
 
