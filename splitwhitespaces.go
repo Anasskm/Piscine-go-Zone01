@@ -4,8 +4,8 @@ func SplitWhiteSpaces(s string) []string {
 	k := 1
 
 	word := ""
-	for i, j := range s {
-		if j == ' ' && s[i+1] != ' ' {
+	for i := 0; i < len(s)-1; i++ {
+		if s[i] == ' ' && s[i+1] != ' ' {
 			k++
 		}
 	}
