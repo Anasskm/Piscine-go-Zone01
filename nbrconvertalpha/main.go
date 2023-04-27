@@ -9,44 +9,36 @@ import (
 func main() {
 	a := os.Args[1:]
 	z := "abcdefghijklmnopqrstuvwxyz"
-
-	if a[0] == "--upper" {
-		for i := 1; i < len(a); i++ {
-			index := Atoi(a[i])
-			if index > 26 || index <= 0 {
-				z01.PrintRune(' ')
-			} else {
-				alpha := z[index-1]
-				z01.PrintRune(rune(alpha - 32))
-			}
-
-		}
-	} else {
-		for i := 0; i < len(a); i++ {
-			index := Atoi(a[i])
-			if index > 26 || index <= 0 {
-				z01.PrintRune(' ')
-			} else {
-				alpha := z[index-1]
-				z01.PrintRune(rune(alpha))
-			}
-
+	flag := false
+	for _, i := range a {
+		if i == "--upper" {
+			a = a[1:]
+			flag = true
 		}
 	}
+
+	for _, i := range a {
+		index := Atoi(i)
+		if index <= 26 && index >= 1 {
+			if flag {
+				z01.PrintRune(rune(z[index-1] - 32))
+			} else {
+				z01.PrintRune(rune(z[index-1]))
+			}
+		} else {
+			z01.PrintRune(' ')
+		}
+
+	}
+
 	z01.PrintRune('\n')
 }
 
 func Atoi(s string) int {
 	x := 0
-	si := 1
-	for j, i := range s {
-		if s[j] == '-' && j == 0 {
-			si = -1
-			continue
-		}
-		if s[j] == '+' && j == 0 {
-			continue
-		}
+
+	for _, i := range s {
+
 		if i < '0' || i > '9' {
 			return 0
 		}
@@ -56,5 +48,5 @@ func Atoi(s string) int {
 		}
 		x = x*10 + y
 	}
-	return x * si
+	return x
 }
