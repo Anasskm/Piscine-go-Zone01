@@ -7,29 +7,23 @@ import (
 )
 
 func main() {
-	a := os.Args[1:]
-	flag := false
-	for i := range a {
-		if i == 0 && a[i] == "--upper" {
-			a = a[1:]
-			flag = true
-			break
+	arg := os.Args[1:]
+	charCase := 0
+	for ind := range arg {
+		if ind == 0 && arg[ind] == "--upper" {
+			charCase = -32
+			arg = arg[1:]
 		}
 	}
-	for _, i := range a {
+	for _, a := range arg {
 		digit := 0
-		for _, b := range i {
+		for _, b := range a {
 			digit = digit*10 + int(b-'0')
 		}
-		if digit <= 26 && digit >= 1 {
-			if flag {
-				z01.PrintRune('a' + rune(digit-32) - 1)
-			} else {
-				z01.PrintRune('a' + rune(digit) - 1)
-			}
+		if 1 <= digit && digit <= 26 {
+			z01.PrintRune('a' + rune(digit+charCase) - 1)
 		} else {
 			z01.PrintRune(' ')
 		}
 	}
-	z01.PrintRune('\n')
 }
