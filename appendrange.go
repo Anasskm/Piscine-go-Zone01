@@ -1,9 +1,9 @@
 package piscine
 
 func AppendRange(min, max int) []int {
-	s := []int{}
+	s := []int(nil)
 	l := max - min
-	if l < 0 {
+	if l <= 0 {
 		return s
 	}
 
