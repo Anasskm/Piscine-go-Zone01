@@ -2,14 +2,20 @@ package main
 
 import (
 	"os"
-	"sort"
 
 	"github.com/01-edu/z01"
 )
 
 func main() {
 	a := os.Args[1:]
-	sort.Strings(a)
+	for x, i := range a {
+		for y, j := range a {
+			if i < j {
+				a[x], a[y] = a[y], a[x]
+			}
+		}
+	}
+
 	for i := 0; i < len(a); i++ {
 		r := []rune(a[i])
 
