@@ -30,7 +30,7 @@ func main() {
 	z01.PrintRune(' ')
 	z01.PrintRune('=')
 	z01.PrintRune(' ')
-	for _, i := range r1 {
+	for _, i := range r2 {
 		z01.PrintRune(i)
 	}
 	z01.PrintRune('\n')
