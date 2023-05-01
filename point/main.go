@@ -43,4 +43,5 @@ func main() {
 	for i := len(ry) - 1; i >= 0; i-- {
 		z01.PrintRune(ry[i])
 	}
+	z01.PrintRune('\n')
 }
