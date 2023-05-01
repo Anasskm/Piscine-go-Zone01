@@ -16,7 +16,7 @@ func main() {
 		os.Exit(0)
 	}
 	file, _ := os.Open(a[0])
-	b := make([]byte, 25)
+	b := make([]byte, 14)
 	file.Read(b)
 	fmt.Println(string(b))
 	file.Close()
