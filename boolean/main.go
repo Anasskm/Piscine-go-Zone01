@@ -14,19 +14,19 @@ func printStr(s string) {
 	z01.PrintRune('\n')
 }
 
-func isEven(s string) bool {
-	if s == "even" {
-		return true
-	} else {
-		return false
-	}
-}
-
 func main() {
 	a := os.Args[1:]
-	if isEven(a[1]) {
+	if isEven(len(a)) {
 		printStr("I have an odd number of arguments")
 	} else {
 		printStr("I have an even number of arguments")
+	}
+}
+
+func isEven(nbr int) bool {
+	if nbr == 1 {
+		return true
+	} else {
+		return false
 	}
 }
