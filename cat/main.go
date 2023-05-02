@@ -14,8 +14,8 @@ func PrintResult(str string) {
 	}
 }
 
-func MyReadFile(fileName string) string {
-	content, err := ioutil.ReadFile(fileName)
+func Read(file string) string {
+	content, err := ioutil.ReadFile(file)
 	if err != nil {
 		return "error"
 	}
@@ -26,12 +26,12 @@ func main() {
 	args := os.Args[1:]
 	// abc := "1"
 	finish := false
-	for _, fileName := range args {
-		if _, err := os.Stat(fileName); err != nil {
-			PrintResult("ERROR: open " + fileName + ": no such file or directory\n")
+	for _, file := range args {
+		if _, err := os.Stat(file); err != nil {
+			PrintResult("ERROR: open " + file + ": no such file or directory\n")
 			return
 		}
-		PrintResult(MyReadFile(fileName))
+		PrintResult(Read(file))
 		finish = true
 	}
 	if !finish {
