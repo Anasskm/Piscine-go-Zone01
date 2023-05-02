@@ -29,7 +29,7 @@ func main() {
 	for _, file := range args {
 		if _, err := os.Stat(file); err != nil {
 			PrintResult("ERROR: open " + file + ": no such file or directory\n")
-			return
+			os.Exit(1)
 		}
 		PrintResult(Read(file))
 		finish = true
