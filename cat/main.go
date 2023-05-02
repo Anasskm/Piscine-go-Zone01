@@ -28,7 +28,7 @@ func main() {
 	finish := false
 	for _, fileName := range args {
 		if _, err := os.Stat(fileName); err != nil {
-			PrintResult("open " + fileName + ": no such file or directory\n")
+			PrintResult("ERROR: open " + fileName + ": no such file or directory\n")
 			return
 		}
 		PrintResult(MyReadFile(fileName))
