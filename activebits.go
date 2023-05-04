@@ -1,8 +1,10 @@
 package piscine
 
-func ActiveBits(n int) uint {
-	if n < 2 {
-		return uint(n)
+func ActiveBits(n int) int {
+	result := 1
+	for ; n > 1; n = n / 2 {
+		result++
 	}
-	return (uint(n) % 2) + ActiveBits(n/2)
+
+	return result
 }
