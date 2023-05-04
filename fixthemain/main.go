@@ -10,6 +10,7 @@ func PrintStr(s string) {
 	for _, r := range s {
 		z01.PrintRune(r)
 	}
+	z01.PrintRune('\n')
 }
 
 func CloseDoor(Door *Door) {
@@ -42,8 +43,7 @@ func OpenDoor(Door *Door) {
 
 func main() {
 	door := &Door{}
-
-	CloseDoor(door)
+	OpenDoor(door)
 	if IsDoorClose(door) {
 		OpenDoor(door)
 	}
