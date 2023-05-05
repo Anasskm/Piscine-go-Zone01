@@ -8,5 +8,5 @@ func Max(s []int) int {
 			}
 		}
 	}
-	return s[len(s)-1]
+	return s[0]
 }
