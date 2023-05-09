@@ -19,11 +19,9 @@ func IsAlNode(node *NodeL) bool {
 }
 
 func ListForEachIf(l *List, f func(*NodeL), cond func(*NodeL) bool) {
-	originalhead := l.Head
 	for i := l.Head; i != nil; i = i.Next {
 		if cond(i) {
 			f(i)
 		}
 	}
-	l.Head = originalhead
 }
