@@ -13,22 +13,22 @@ func BTreeInsertData(root *TreeNode, data string) *TreeNode {
 		return root
 	}
 
-	itterator := root
+	i := root
 	for {
-		if data < itterator.Data {
-			if itterator.Left == nil {
-				itterator.Left = newNode
-				newNode.Parent = itterator
+		if data < i.Data {
+			if i.Left == nil {
+				i.Left = newNode
+				newNode.Parent = i
 				break
 			}
-			itterator = itterator.Left
+			i = i.Left
 		} else {
-			if itterator.Right == nil {
-				itterator.Right = newNode
-				newNode.Parent = itterator
+			if i.Right == nil {
+				i.Right = newNode
+				newNode.Parent = i
 				break
 			}
-			itterator = itterator.Right
+			i = i.Right
 		}
 	}
 
