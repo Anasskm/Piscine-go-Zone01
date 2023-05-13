@@ -8,10 +8,15 @@ func BTreeSearchItem(root *TreeNode, elem string) *TreeNode {
 	for len(s) > 0 {
 		n := s[len(s)-1]
 		s = s[:len(s)-1]
-		if n.Data == elem {
+		if n.Data == elem && n != nil {
 			return n
 		}
-		s = append(s, n.Left, n.Right)
+		if elem < n.Data {
+			s = append(s, n.Left)
+		} else {
+			s = append(s, n.Right)
+		}
+
 	}
 	return nil
 }
